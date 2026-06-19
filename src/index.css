@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+/* Custom Cyberpunk & Retro Sci-Fi Styling Animations - Artistic Flair Specifics */
+
+@keyframes scanline-anim {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+@keyframes grid-scroll {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 40px; }
+}
+
+@keyframes neon-pulse-red {
+  0%, 100% { box-shadow: 0 0 5px rgba(255, 0, 60, 0.2), 0 0 15px rgba(255, 0, 60, 0.2); }
+  50% { box-shadow: 0 0 15px rgba(255, 0, 60, 0.6), 0 0 32px rgba(255, 0, 60, 0.4); }
+}
+
+@keyframes neon-pulse-green {
+  0%, 100% { box-shadow: 0 0 5px rgba(0, 255, 159, 0.2), 0 0 15px rgba(0, 255, 159, 0.2); }
+  50% { box-shadow: 0 0 15px rgba(0, 255, 159, 0.6), 0 0 32px rgba(0, 255, 159, 0.4); }
+}
+
+@keyframes neon-pulse-blue {
+  0%, 100% { box-shadow: 0 0 5px rgba(0, 240, 255, 0.2), 0 0 15px rgba(0, 240, 255, 0.2); }
+  50% { box-shadow: 0 0 15px rgba(0, 240, 255, 0.6), 0 0 32px rgba(0, 240, 255, 0.4); }
+}
+
+@keyframes wire-sparkle {
+  0%, 100% { filter: drop-shadow(0 0 4px currentColor); }
+  50% { filter: drop-shadow(0 0 12px currentColor) brightness(1.25); }
+}
+
+@keyframes explode-shake {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  10% { transform: translate(-4px, -2px) rotate(-1deg); }
+  20% { transform: translate(3px, 4px) rotate(1deg); }
+  30% { transform: translate(-3px, 2px) rotate(0deg); }
+  40% { transform: translate(4px, -3px) rotate(1deg); }
+  50% { transform: translate(-4px, 3px) rotate(-1deg); }
+  60% { transform: translate(3px, -2px) rotate(0deg); }
+  70% { transform: translate(-2px, 4px) rotate(1deg); }
+  80% { transform: translate(4px, 2px) rotate(-1deg); }
+  90% { transform: translate(-3px, -3px) rotate(0deg); }
+}
+
+/* Custom Utilities & Theme overrides */
+.cyber-grid {
+  background-size: 50px 50px;
+  background-image: linear-gradient(to right, rgba(0, 255, 159, 0.05) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(0, 255, 159, 0.05) 1px, transparent 1px);
+  animation: grid-scroll 32s linear infinite;
+}
+
+.crt-scanline {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.3) 50%);
+  background-size: 100% 4px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Artistic Flair Glow Theme Effects */
+.neon-text-red {
+  text-shadow: 0 0 5px #ff003c, 0 0 15px rgba(255, 0, 60, 0.6);
+}
+
+.neon-text-green {
+  text-shadow: 0 0 5px #00ff9f, 0 0 15px rgba(0, 255, 159, 0.6);
+}
+
+.neon-text-yellow {
+  text-shadow: 0 0 5px #f3ff00, 0 0 15px rgba(243, 255, 0, 0.6);
+}
+
+.neon-text-blue {
+  text-shadow: 0 0 5px #00f0ff, 0 0 15px rgba(0, 240, 255, 0.6);
+}
+
+.neon-border-red {
+  border-color: #ff003c;
+  box-shadow: 0 0 15px rgba(255, 0, 60, 0.25), inset 0 0 5px rgba(255, 0, 60, 0.15);
+}
+
+.neon-border-green {
+  border-color: #00ff9f;
+  box-shadow: 0 0 15px rgba(0, 255, 159, 0.25), inset 0 0 5px rgba(0, 255, 159, 0.15);
+}
+
+.neon-border-yellow {
+  border-color: #f3ff00;
+  box-shadow: 0 0 15px rgba(243, 255, 0, 0.25), inset 0 0 5px rgba(243, 255, 0, 0.15);
+}
+
+.neon-border-blue {
+  border-color: #00f0ff;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.25), inset 0 0 5px rgba(0, 240, 255, 0.15);
+}
+
+.pulse-red-glow {
+  animation: neon-pulse-red 2s infinite ease-in-out;
+}
+
+.pulse-green-glow {
+  animation: neon-pulse-green 2s infinite ease-in-out;
+}
+
+.pulse-blue-glow {
+  animation: neon-pulse-blue 2s infinite ease-in-out;
+}
+
+.wire-glow {
+  animation: wire-sparkle 1.5s infinite ease-in-out;
+}
+
+.shaking-container {
+  animation: explode-shake 0.3s infinite;
+}
+
+/* Custom Scrollbar in retro cyber theme */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: #1a1a1a;
+  border: 1px solid #00ff9f;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00ff9f;
+}
+
+/* Futuristic digital font effect with fallback load */
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@500;600;700&display=swap');
+
+.digital-font {
+  font-family: 'Share Tech Mono', 'JetBrains Mono', monospace;
+}
+
+.futuristic-font {
+  font-family: 'Rajdhani', sans-serif;
+}

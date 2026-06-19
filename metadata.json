@@ -1,0 +1,8 @@
+{
+  "name": "拆彈專家 (Bomb Defusal)",
+  "description": "一款基於 Firebase Realtime Database 即時狀態同步的賽博朋克風格多人合作拆彈派對遊戲《拆彈專家》。一位玩家擔任「拆彈手」，其他玩家擔任「專家」並透過密語提示引導拆彈手成功剪線！",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
